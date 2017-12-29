@@ -1,0 +1,881 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{D8250B07-5D46-43F7-A3A8-472D347A141C}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>HRGA_OL</RootNamespace>
+    <AssemblyName>HRGA_OL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>HRGA_OL.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>HRGA_OL.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=4.1.7.429, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\QUERY &amp; SCRIPTS\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\QUERY &amp; SCRIPTS\Microsoft.ReportViewer.WebForms.DLL</HintPath>
+    </Reference>
+    <Reference Include="PdfViewer, Version=1.0.2576.1086, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\PdfViewer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\HRGA_OL.dll" />
+    <Content Include="bin\HRGA_OL.pdb" />
+    <Content Include="bin\HRGA_OL.xml" />
+    <Content Include="Designs\adminLTE\css\AdminLTE.css" />
+    <Content Include="Designs\adminLTE\css\AdminLTE.min.css" />
+    <Content Include="Designs\adminLTE\css\skins\skin-black-light.css" />
+    <Content Include="Designs\adminLTE\css\skins\skin-black-light.min.css" />
+    <Content Include="Designs\adminLTE\css\skins\skin-black.css" />
+    <Content Include="Designs\adminLTE\css\skins\skin-black.min.css" />
+    <Content Include="Designs\adminLTE\css\skins\skin-blue-light.css" />
+    <Content Include="Designs\adminLTE\css\skins\skin-blue-light.min.css" />
+    <Content Include="Designs\adminLTE\css\skins\skin-blue.css" />
+    <Content Include="Designs\adminLTE\css\skins\skin-blue.min.css" />
+    <Content Include="Designs\adminLTE\css\skins\skin-green-light.css" />
+    <Content Include="Designs\adminLTE\css\skins\skin-green-light.min.css" />
+    <Content Include="Designs\adminLTE\css\skins\skin-green.css" />
+    <Content Include="Designs\adminLTE\css\skins\skin-green.min.css" />
+    <Content Include="Designs\adminLTE\css\skins\skin-purple-light.css" />
+    <Content Include="Designs\adminLTE\css\skins\skin-purple-light.min.css" />
+    <Content Include="Designs\adminLTE\css\skins\skin-purple.css" />
+    <Content Include="Designs\adminLTE\css\skins\skin-purple.min.css" />
+    <Content Include="Designs\adminLTE\css\skins\skin-red-light.css" />
+    <Content Include="Designs\adminLTE\css\skins\skin-red-light.min.css" />
+    <Content Include="Designs\adminLTE\css\skins\skin-red.css" />
+    <Content Include="Designs\adminLTE\css\skins\skin-red.min.css" />
+    <Content Include="Designs\adminLTE\css\skins\skin-yellow-light.css" />
+    <Content Include="Designs\adminLTE\css\skins\skin-yellow-light.min.css" />
+    <Content Include="Designs\adminLTE\css\skins\skin-yellow.css" />
+    <Content Include="Designs\adminLTE\css\skins\skin-yellow.min.css" />
+    <Content Include="Designs\adminLTE\css\skins\_all-skins.css" />
+    <Content Include="Designs\adminLTE\css\skins\_all-skins.min.css" />
+    <Content Include="Designs\adminLTE\img\avatar.png" />
+    <Content Include="Designs\adminLTE\img\avatar04.png" />
+    <Content Include="Designs\adminLTE\img\avatar2.png" />
+    <Content Include="Designs\adminLTE\img\avatar3.png" />
+    <Content Include="Designs\adminLTE\img\avatar5.png" />
+    <Content Include="Designs\adminLTE\img\boxed-bg.jpg" />
+    <Content Include="Designs\adminLTE\img\boxed-bg.png" />
+    <Content Include="Designs\adminLTE\img\Calendar.png" />
+    <Content Include="Designs\adminLTE\img\credit\american-express.png" />
+    <Content Include="Designs\adminLTE\img\credit\cirrus.png" />
+    <Content Include="Designs\adminLTE\img\credit\mastercard.png" />
+    <Content Include="Designs\adminLTE\img\credit\mestro.png" />
+    <Content Include="Designs\adminLTE\img\credit\paypal.png" />
+    <Content Include="Designs\adminLTE\img\credit\paypal2.png" />
+    <Content Include="Designs\adminLTE\img\credit\visa.png" />
+    <Content Include="Designs\adminLTE\img\default-50x50.gif" />
+    <Content Include="Designs\adminLTE\img\icons.png" />
+    <Content Include="Designs\adminLTE\img\photo1.png" />
+    <Content Include="Designs\adminLTE\img\photo2.png" />
+    <Content Include="Designs\adminLTE\img\photo3.jpg" />
+    <Content Include="Designs\adminLTE\img\photo4.jpg" />
+    <Content Include="Designs\adminLTE\img\user1-128x128.jpg" />
+    <Content Include="Designs\adminLTE\img\user2-160x160.jpg" />
+    <Content Include="Designs\adminLTE\img\user3-128x128.jpg" />
+    <Content Include="Designs\adminLTE\img\user4-128x128.jpg" />
+    <Content Include="Designs\adminLTE\img\user5-128x128.jpg" />
+    <Content Include="Designs\adminLTE\img\user6-128x128.jpg" />
+    <Content Include="Designs\adminLTE\img\user7-128x128.jpg" />
+    <Content Include="Designs\adminLTE\img\user8-128x128.jpg" />
+    <Content Include="Designs\adminLTE\js\app.js" />
+    <Content Include="Designs\adminLTE\js\app.min.js" />
+    <Content Include="Designs\adminLTE\js\demo.js" />
+    <Content Include="Designs\adminLTE\js\pages\dashboard.js" />
+    <Content Include="Designs\adminLTE\js\pages\dashboard2.js" />
+    <Content Include="Designs\bootstrap\css\bootstrap.css" />
+    <Content Include="Designs\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Designs\bootstrap\js\bootstrap.js" />
+    <Content Include="Designs\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Designs\bootstrap\js\npm.js" />
+    <Content Include="Designs\font-awesome\css\font-awesome.css" />
+    <Content Include="Designs\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Designs\font-awesome\HELP-US-OUT.txt" />
+    <Content Include="Designs\Home\css\font-awesome.min.css" />
+    <Content Include="Designs\Home\css\style.css" />
+    <Content Include="Designs\Home\images\bg.jpg" />
+    <Content Include="Designs\Home\placeholders.min.js" />
+    <Content Include="Designs\Images\add.png" />
+    <Content Include="Designs\Images\arrow.png" />
+    <Content Include="Designs\Images\book.png" />
+    <Content Include="Designs\Images\centang.png" />
+    <Content Include="Designs\Images\clean.png" />
+    <Content Include="Designs\Images\cross.png" />
+    <Content Include="Designs\Images\delete.png" />
+    <Content Include="Designs\Images\person.png" />
+    <Content Include="Designs\jQuery\calendar-blue.css" />
+    <Content Include="Designs\jQuery\calendar-en.min.js" />
+    <Content Include="Designs\jQuery\date.js" />
+    <Content Include="Designs\jQuery\daterangepicker.js" />
+    <Content Include="Designs\jQuery\jquery-1.12.4.js" />
+    <Content Include="Designs\jQuery\jquery-1.4.1.js" />
+    <Content Include="Designs\jQuery\jquery-1.4.1.min.js" />
+    <Content Include="Designs\jQuery\jquery-2.2.3.min.js" />
+    <Content Include="Designs\jQuery\jquery-ui.css" />
+    <Content Include="Designs\jQuery\jquery-ui.js" />
+    <Content Include="Designs\jQuery\jquery.dynDateTime.min.js" />
+    <Content Include="Designs\jQuery\jquery.ptTimeSelect.js" />
+    <Content Include="Designs\jQuery\moment.min.js" />
+    <Content Include="Designs\jQuery\ptTimeSelect.css" />
+    <Content Include="Designs\MasterPage\bootstrap\dist\css\bootstrap-theme.css" />
+    <Content Include="Designs\MasterPage\bootstrap\dist\css\bootstrap-theme.min.css" />
+    <Content Include="Designs\MasterPage\bootstrap\dist\css\bootstrap.css" />
+    <Content Include="Designs\MasterPage\bootstrap\dist\css\bootstrap.min.css" />
+    <Content Include="Designs\MasterPage\bootstrap\dist\js\bootstrap.js" />
+    <Content Include="Designs\MasterPage\bootstrap\dist\js\bootstrap.min.js" />
+    <Content Include="Designs\MasterPage\bootstrap\dist\js\npm.js" />
+    <Content Include="Designs\MasterPage\bootstrap\Gruntfile.js" />
+    <Content Include="Designs\MasterPage\bootstrap\grunt\bs-commonjs-generator.js" />
+    <Content Include="Designs\MasterPage\bootstrap\grunt\bs-glyphicons-data-generator.js" />
+    <Content Include="Designs\MasterPage\bootstrap\grunt\bs-lessdoc-parser.js" />
+    <Content Include="Designs\MasterPage\bootstrap\grunt\bs-raw-files-generator.js" />
+    <Content Include="Designs\MasterPage\bootstrap\js\affix.js" />
+    <Content Include="Designs\MasterPage\bootstrap\js\alert.js" />
+    <Content Include="Designs\MasterPage\bootstrap\js\button.js" />
+    <Content Include="Designs\MasterPage\bootstrap\js\carousel.js" />
+    <Content Include="Designs\MasterPage\bootstrap\js\collapse.js" />
+    <Content Include="Designs\MasterPage\bootstrap\js\dropdown.js" />
+    <Content Include="Designs\MasterPage\bootstrap\js\modal.js" />
+    <Content Include="Designs\MasterPage\bootstrap\js\popover.js" />
+    <Content Include="Designs\MasterPage\bootstrap\js\scrollspy.js" />
+    <Content Include="Designs\MasterPage\bootstrap\js\tab.js" />
+    <Content Include="Designs\MasterPage\bootstrap\js\tooltip.js" />
+    <Content Include="Designs\MasterPage\bootstrap\js\transition.js" />
+    <Content Include="Designs\MasterPage\bootstrap\package.js" />
+    <Content Include="Designs\MasterPage\css\custom.min.css" />
+    <Content Include="Designs\MasterPage\css\plugins\bootstrap-progressbar-3.3.4.min.css" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\all.css" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\flat\aero%402x.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\flat\aero.css" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\flat\aero.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\flat\blue%402x.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\flat\blue.css" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\flat\blue.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\flat\flat%402x.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\flat\flat.css" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\flat\flat.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\flat\green%402x.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\flat\green.css" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\flat\green.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\flat\grey%402x.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\flat\grey.css" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\flat\grey.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\flat\orange%402x.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\flat\orange.css" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\flat\orange.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\flat\pink%402x.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\flat\pink.css" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\flat\pink.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\flat\purple%402x.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\flat\purple.css" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\flat\purple.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\flat\red%402x.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\flat\red.css" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\flat\red.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\flat\yellow%402x.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\flat\yellow.css" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\flat\yellow.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\flat\_all.css" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\futurico\futurico%402x.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\futurico\futurico.css" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\futurico\futurico.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\line\aero.css" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\line\blue.css" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\line\green.css" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\line\grey.css" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\line\line%402x.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\line\line.css" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\line\line.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\line\orange.css" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\line\pink.css" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\line\purple.css" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\line\red.css" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\line\yellow.css" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\line\_all.css" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\minimal\aero%402x.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\minimal\aero.css" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\minimal\aero.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\minimal\blue%402x.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\minimal\blue.css" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\minimal\blue.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\minimal\green%402x.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\minimal\green.css" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\minimal\green.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\minimal\grey%402x.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\minimal\grey.css" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\minimal\grey.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\minimal\minimal%402x.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\minimal\minimal.css" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\minimal\minimal.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\minimal\orange%402x.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\minimal\orange.css" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\minimal\orange.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\minimal\pink%402x.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\minimal\pink.css" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\minimal\pink.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\minimal\purple%402x.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\minimal\purple.css" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\minimal\purple.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\minimal\red%402x.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\minimal\red.css" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\minimal\red.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\minimal\yellow%402x.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\minimal\yellow.css" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\minimal\yellow.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\minimal\_all.css" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\polaris\polaris%402x.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\polaris\polaris.css" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\polaris\polaris.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\square\aero%402x.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\square\aero.css" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\square\aero.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\square\blue%402x.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\square\blue.css" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\square\blue.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\square\green%402x.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\square\green.css" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\square\green.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\square\grey%402x.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\square\grey.css" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\square\grey.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\square\orange%402x.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\square\orange.css" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\square\orange.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\square\pink%402x.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\square\pink.css" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\square\pink.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\square\purple%402x.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\square\purple.css" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\square\purple.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\square\red%402x.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\square\red.css" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\square\red.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\square\square%402x.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\square\square.css" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\square\square.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\square\yellow%402x.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\square\yellow.css" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\square\yellow.png" />
+    <Content Include="Designs\MasterPage\css\plugins\iCheck\square\_all.css" />
+    <Content Include="Designs\MasterPage\css\plugins\jqvmap.min.css" />
+    <Content Include="Designs\MasterPage\css\plugins\nprogress.css" />
+    <Content Include="Designs\MasterPage\css\plugins\pnotify\dist\pnotify.animate.js" />
+    <Content Include="Designs\MasterPage\css\plugins\pnotify\dist\pnotify.brighttheme.css" />
+    <Content Include="Designs\MasterPage\css\plugins\pnotify\dist\pnotify.buttons.css" />
+    <Content Include="Designs\MasterPage\css\plugins\pnotify\dist\pnotify.buttons.js" />
+    <Content Include="Designs\MasterPage\css\plugins\pnotify\dist\pnotify.callbacks.js" />
+    <Content Include="Designs\MasterPage\css\plugins\pnotify\dist\pnotify.confirm.js" />
+    <Content Include="Designs\MasterPage\css\plugins\pnotify\dist\pnotify.css" />
+    <Content Include="Designs\MasterPage\css\plugins\pnotify\dist\pnotify.desktop.js" />
+    <Content Include="Designs\MasterPage\css\plugins\pnotify\dist\pnotify.history.css" />
+    <Content Include="Designs\MasterPage\css\plugins\pnotify\dist\pnotify.history.js" />
+    <Content Include="Designs\MasterPage\css\plugins\pnotify\dist\pnotify.js" />
+    <Content Include="Designs\MasterPage\css\plugins\pnotify\dist\pnotify.material.css" />
+    <Content Include="Designs\MasterPage\css\plugins\pnotify\dist\pnotify.mobile.css" />
+    <Content Include="Designs\MasterPage\css\plugins\pnotify\dist\pnotify.mobile.js" />
+    <Content Include="Designs\MasterPage\css\plugins\pnotify\dist\pnotify.nonblock.css" />
+    <Content Include="Designs\MasterPage\css\plugins\pnotify\dist\pnotify.nonblock.js" />
+    <Content Include="Designs\MasterPage\css\plugins\pnotify\dist\pnotify.reference.js" />
+    <Content Include="Designs\MasterPage\css\plugins\pnotify\dist\pnotify.tooltip.js" />
+    <Content Include="Designs\MasterPage\css\plugins\pnotify\libtests\browserify\index.js" />
+    <Content Include="Designs\MasterPage\font-awesome\css\font-awesome.css" />
+    <Content Include="Designs\MasterPage\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Designs\MasterPage\font-awesome\HELP-US-OUT.txt" />
+    <Content Include="Designs\MasterPage\js\bootstrap-progressbar.min.js" />
+    <Content Include="Designs\MasterPage\js\bootstrap.min.js" />
+    <Content Include="Designs\MasterPage\js\Chart.min.js" />
+    <Content Include="Designs\MasterPage\js\custom.min.js" />
+    <Content Include="Designs\MasterPage\js\date.js" />
+    <Content Include="Designs\MasterPage\js\daterangepicker.js" />
+    <Content Include="Designs\MasterPage\js\fastclick.js" />
+    <Content Include="Designs\MasterPage\js\gauge.min.js" />
+    <Content Include="Designs\MasterPage\js\icheck.min.js" />
+    <Content Include="Designs\MasterPage\js\jquery.min.js" />
+    <Content Include="Designs\MasterPage\js\moment.min.js" />
+    <Content Include="Designs\MasterPage\js\nprogress.js" />
+    <Content Include="Designs\MasterPage\js\skycons.js" />
+    <Content Include="Designs\Microsoft.ReportViewer.Common.dll" />
+    <Content Include="Designs\Microsoft.ReportViewer.WebForms.DLL" />
+    <Content Include="Forms\References\Frm_ManualBook.aspx" />
+    <Content Include="Forms\References\Frm_MasterMess.aspx" />
+    <Content Include="Forms\References\Frm_MasterTicketing.aspx" />
+    <Content Include="Forms\Reports\Frm_DashReport.aspx" />
+    <Content Include="Forms\Reports\Frm_Report.aspx" />
+    <Content Include="Forms\SiteMaster\Default.aspx" />
+    <Content Include="Forms\SiteMaster\Frm_Login.aspx" />
+    <Content Include="Forms\Transactions\Event\Frm_ConfirmEvent.aspx" />
+    <Content Include="Forms\Transactions\Event\Frm_PesertaEvent.aspx" />
+    <Content Include="Forms\Transactions\Event\Frm_RequestEvent.aspx" />
+    <Content Include="Forms\Transactions\Event\Frm_SMSHotline.aspx" />
+    <Content Include="Forms\Transactions\Reservasi\Frm_Checkin.aspx" />
+    <Content Include="Forms\Transactions\Reservasi\Frm_Checkout.aspx" />
+    <Content Include="Forms\Transactions\Reservasi\Frm_Housekeeping.aspx" />
+    <Content Include="Forms\Transactions\Reservasi\Frm_ValidateReservasi.aspx" />
+    <Content Include="Forms\Transactions\Ticketing\Frm_AssignTA.aspx" />
+    <Content Include="Forms\Reports\Frm_ETicket.aspx" />
+    <Content Include="Forms\Transactions\Ticketing\Frm_IssuedTicket.aspx" />
+    <Content Include="Forms\Transactions\Ticketing\Frm_ModifBooking.aspx" />
+    <Content Include="Forms\Transactions\Ticketing\Frm_NewBooking.aspx" />
+    <Content Include="Forms\Transactions\Ticketing\Frm_ProsesRevisi_Ticket.aspx" />
+    <Content Include="Forms\Transactions\Ticketing\Frm_RevisiTicket.aspx" />
+    <Content Include="Forms\Transactions\Ticketing\Frm_TicketEmergency.aspx" />
+    <Content Include="Forms\Transactions\Transport\Frm_RequestTransport.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class\ClassCuti.vb" />
+    <Compile Include="Class\ClassManifest.vb" />
+    <Compile Include="Forms\References\Frm_ManualBook.aspx.designer.vb">
+      <DependentUpon>Frm_ManualBook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\References\Frm_ManualBook.aspx.vb">
+      <DependentUpon>Frm_ManualBook.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Forms\References\Frm_MasterMess.aspx.designer.vb">
+      <DependentUpon>Frm_MasterMess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\References\Frm_MasterMess.aspx.vb">
+      <DependentUpon>Frm_MasterMess.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Forms\References\Frm_MasterTicketing.aspx.designer.vb">
+      <DependentUpon>Frm_MasterTicketing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\References\Frm_MasterTicketing.aspx.vb">
+      <DependentUpon>Frm_MasterTicketing.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Reports\Frm_DashReport.aspx.designer.vb">
+      <DependentUpon>Frm_DashReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Reports\Frm_DashReport.aspx.vb">
+      <DependentUpon>Frm_DashReport.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Reports\Frm_Report.aspx.designer.vb">
+      <DependentUpon>Frm_Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Reports\Frm_Report.aspx.vb">
+      <DependentUpon>Frm_Report.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Forms\SiteMaster\Default.aspx.designer.vb">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SiteMaster\Default.aspx.vb">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Forms\SiteMaster\Frm_Login.aspx.designer.vb">
+      <DependentUpon>Frm_Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SiteMaster\Frm_Login.aspx.vb">
+      <DependentUpon>Frm_Login.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Forms\SiteMaster\HrgaOl.Master.designer.vb">
+      <DependentUpon>HrgaOl.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SiteMaster\HrgaOl.Master.vb">
+      <DependentUpon>HrgaOl.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Transactions\Event\Frm_ConfirmEvent.aspx.designer.vb">
+      <DependentUpon>Frm_ConfirmEvent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Transactions\Event\Frm_ConfirmEvent.aspx.vb">
+      <DependentUpon>Frm_ConfirmEvent.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Transactions\Event\Frm_PesertaEvent.aspx.designer.vb">
+      <DependentUpon>Frm_PesertaEvent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Transactions\Event\Frm_PesertaEvent.aspx.vb">
+      <DependentUpon>Frm_PesertaEvent.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Transactions\Event\Frm_RequestEvent.aspx.designer.vb">
+      <DependentUpon>Frm_RequestEvent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Transactions\Event\Frm_RequestEvent.aspx.vb">
+      <DependentUpon>Frm_RequestEvent.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Transactions\Event\Frm_SMSHotline.aspx.designer.vb">
+      <DependentUpon>Frm_SMSHotline.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Transactions\Event\Frm_SMSHotline.aspx.vb">
+      <DependentUpon>Frm_SMSHotline.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Transactions\Reservasi\Frm_Checkin.aspx.designer.vb">
+      <DependentUpon>Frm_Checkin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Transactions\Reservasi\Frm_Checkin.aspx.vb">
+      <DependentUpon>Frm_Checkin.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Transactions\Reservasi\Frm_Checkout.aspx.designer.vb">
+      <DependentUpon>Frm_Checkout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Transactions\Reservasi\Frm_Checkout.aspx.vb">
+      <DependentUpon>Frm_Checkout.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Transactions\Reservasi\Frm_Housekeeping.aspx.designer.vb">
+      <DependentUpon>Frm_Housekeeping.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Transactions\Reservasi\Frm_Housekeeping.aspx.vb">
+      <DependentUpon>Frm_Housekeeping.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Transactions\Reservasi\Frm_ValidateReservasi.aspx.designer.vb">
+      <DependentUpon>Frm_ValidateReservasi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Transactions\Reservasi\Frm_ValidateReservasi.aspx.vb">
+      <DependentUpon>Frm_ValidateReservasi.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Transactions\Ticketing\Frm_AssignTA.aspx.designer.vb">
+      <DependentUpon>Frm_AssignTA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Transactions\Ticketing\Frm_AssignTA.aspx.vb">
+      <DependentUpon>Frm_AssignTA.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Reports\Frm_ETicket.aspx.designer.vb">
+      <DependentUpon>Frm_ETicket.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Reports\Frm_ETicket.aspx.vb">
+      <DependentUpon>Frm_ETicket.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Transactions\Ticketing\Frm_IssuedTicket.aspx.designer.vb">
+      <DependentUpon>Frm_IssuedTicket.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Transactions\Ticketing\Frm_IssuedTicket.aspx.vb">
+      <DependentUpon>Frm_IssuedTicket.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Transactions\Ticketing\Frm_ModifBooking.aspx.designer.vb">
+      <DependentUpon>Frm_ModifBooking.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Transactions\Ticketing\Frm_ModifBooking.aspx.vb">
+      <DependentUpon>Frm_ModifBooking.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Transactions\Ticketing\Frm_NewBooking.aspx.designer.vb">
+      <DependentUpon>Frm_NewBooking.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Transactions\Ticketing\Frm_NewBooking.aspx.vb">
+      <DependentUpon>Frm_NewBooking.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Transactions\Ticketing\Frm_ProsesRevisi_Ticket.aspx.designer.vb">
+      <DependentUpon>Frm_ProsesRevisi_Ticket.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Transactions\Ticketing\Frm_ProsesRevisi_Ticket.aspx.vb">
+      <DependentUpon>Frm_ProsesRevisi_Ticket.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Transactions\Ticketing\Frm_RevisiTicket.aspx.designer.vb">
+      <DependentUpon>Frm_RevisiTicket.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Transactions\Ticketing\Frm_RevisiTicket.aspx.vb">
+      <DependentUpon>Frm_RevisiTicket.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Transactions\Ticketing\Frm_TicketEmergency.aspx.designer.vb">
+      <DependentUpon>Frm_TicketEmergency.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Transactions\Ticketing\Frm_TicketEmergency.aspx.vb">
+      <DependentUpon>Frm_TicketEmergency.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Transactions\Transport\Frm_RequestTransport.aspx.designer.vb">
+      <DependentUpon>Frm_RequestTransport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Transactions\Transport\Frm_RequestTransport.aspx.vb">
+      <DependentUpon>Frm_RequestTransport.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Global.asax.vb">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWebExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.Web.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Designs\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Designs\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Designs\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Designs\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Designs\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Designs\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Designs\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Designs\font-awesome\.bower.json" />
+    <Content Include="Designs\font-awesome\.gitignore" />
+    <Content Include="Designs\font-awesome\.npmignore" />
+    <Content Include="Designs\font-awesome\bower.json" />
+    <Content Include="Designs\font-awesome\css\font-awesome.css.map" />
+    <Content Include="Designs\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Designs\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Designs\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Designs\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Designs\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Designs\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Designs\font-awesome\less\animated.less" />
+    <Content Include="Designs\font-awesome\less\bordered-pulled.less" />
+    <Content Include="Designs\font-awesome\less\core.less" />
+    <Content Include="Designs\font-awesome\less\fixed-width.less" />
+    <Content Include="Designs\font-awesome\less\font-awesome.less" />
+    <Content Include="Designs\font-awesome\less\icons.less" />
+    <Content Include="Designs\font-awesome\less\larger.less" />
+    <Content Include="Designs\font-awesome\less\list.less" />
+    <Content Include="Designs\font-awesome\less\mixins.less" />
+    <Content Include="Designs\font-awesome\less\path.less" />
+    <Content Include="Designs\font-awesome\less\rotated-flipped.less" />
+    <Content Include="Designs\font-awesome\less\screen-reader.less" />
+    <Content Include="Designs\font-awesome\less\stacked.less" />
+    <Content Include="Designs\font-awesome\less\variables.less" />
+    <Content Include="Designs\font-awesome\scss\_animated.scss" />
+    <Content Include="Designs\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="Designs\font-awesome\scss\_core.scss" />
+    <Content Include="Designs\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="Designs\font-awesome\scss\_icons.scss" />
+    <Content Include="Designs\font-awesome\scss\_larger.scss" />
+    <Content Include="Designs\font-awesome\scss\_list.scss" />
+    <Content Include="Designs\font-awesome\scss\_mixins.scss" />
+    <Content Include="Designs\font-awesome\scss\_path.scss" />
+    <Content Include="Designs\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="Designs\font-awesome\scss\_screen-reader.scss" />
+    <Content Include="Designs\font-awesome\scss\_stacked.scss" />
+    <Content Include="Designs\font-awesome\scss\_variables.scss" />
+    <Content Include="Designs\font-awesome\scss\font-awesome.scss" />
+    <Content Include="Designs\Home\fonts\fontawesome-webfont.eot" />
+    <Content Include="Designs\Home\fonts\fontawesome-webfont.svg" />
+    <Content Include="Designs\Home\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Designs\Home\fonts\fontawesome-webfont.woff" />
+    <Content Include="Designs\Home\fonts\FontAwesome.otf" />
+    <Content Include="Designs\MasterPage\bootstrap\.bower.json" />
+    <Content Include="Designs\MasterPage\bootstrap\bower.json" />
+    <Content Include="Designs\MasterPage\bootstrap\CHANGELOG.md" />
+    <Content Include="Designs\MasterPage\bootstrap\dist\css\bootstrap-theme.css.map" />
+    <Content Include="Designs\MasterPage\bootstrap\dist\css\bootstrap-theme.min.css.map" />
+    <Content Include="Designs\MasterPage\bootstrap\dist\css\bootstrap.css.map" />
+    <Content Include="Designs\MasterPage\bootstrap\dist\css\bootstrap.min.css.map" />
+    <Content Include="Designs\MasterPage\bootstrap\dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Designs\MasterPage\bootstrap\dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Designs\MasterPage\bootstrap\dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Designs\MasterPage\bootstrap\dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Designs\MasterPage\bootstrap\dist\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Designs\MasterPage\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Designs\MasterPage\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Designs\MasterPage\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Designs\MasterPage\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Designs\MasterPage\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Designs\MasterPage\bootstrap\grunt\.jshintrc" />
+    <Content Include="Designs\MasterPage\bootstrap\grunt\configBridge.json" />
+    <Content Include="Designs\MasterPage\bootstrap\grunt\sauce_browsers.yml" />
+    <Content Include="Designs\MasterPage\bootstrap\js\.jscsrc" />
+    <Content Include="Designs\MasterPage\bootstrap\js\.jshintrc" />
+    <Content Include="Designs\MasterPage\bootstrap\less\.csscomb.json" />
+    <Content Include="Designs\MasterPage\bootstrap\less\.csslintrc" />
+    <Content Include="Designs\MasterPage\bootstrap\less\alerts.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\badges.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\bootstrap.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\breadcrumbs.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\button-groups.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\buttons.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\carousel.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\close.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\code.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\component-animations.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\dropdowns.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\forms.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\glyphicons.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\grid.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\input-groups.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\jumbotron.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\labels.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\list-group.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\media.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\mixins\alerts.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\mixins\background-variant.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\mixins\border-radius.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\mixins\buttons.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\mixins\center-block.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\mixins\clearfix.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\mixins\forms.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\mixins\gradients.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\mixins\grid-framework.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\mixins\grid.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\mixins\hide-text.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\mixins\image.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\mixins\labels.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\mixins\list-group.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\mixins\nav-divider.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\mixins\nav-vertical-align.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\mixins\opacity.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\mixins\pagination.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\mixins\panels.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\mixins\progress-bar.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\mixins\reset-filter.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\mixins\reset-text.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\mixins\resize.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\mixins\responsive-visibility.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\mixins\size.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\mixins\tab-focus.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\mixins\table-row.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\mixins\text-emphasis.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\mixins\text-overflow.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\mixins\vendor-prefixes.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\mixins.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\modals.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\navbar.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\navs.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\normalize.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\pager.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\pagination.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\panels.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\popovers.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\print.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\progress-bars.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\responsive-embed.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\responsive-utilities.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\scaffolding.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\tables.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\theme.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\thumbnails.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\tooltip.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\type.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\utilities.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\variables.less" />
+    <Content Include="Designs\MasterPage\bootstrap\less\wells.less" />
+    <Content Include="Designs\MasterPage\bootstrap\LICENSE" />
+    <Content Include="Designs\MasterPage\bootstrap\nuget\bootstrap.less.nuspec" />
+    <Content Include="Designs\MasterPage\bootstrap\nuget\bootstrap.nuspec" />
+    <Content Include="Designs\MasterPage\bootstrap\nuget\MyGet.ps1" />
+    <Content Include="Designs\MasterPage\bootstrap\package.json" />
+    <Content Include="Designs\MasterPage\bootstrap\README.md" />
+    <Content Include="Designs\MasterPage\css\plugins\pnotify\.bower.json" />
+    <Content Include="Designs\MasterPage\css\plugins\pnotify\.gitignore" />
+    <Content Include="Designs\MasterPage\css\plugins\pnotify\bower.json" />
+    <Content Include="Designs\MasterPage\css\plugins\pnotify\COPYING" />
+    <Content Include="Designs\MasterPage\css\plugins\pnotify\README.md" />
+    <Content Include="Designs\MasterPage\font-awesome\.bower.json" />
+    <Content Include="Designs\MasterPage\font-awesome\.gitignore" />
+    <Content Include="Designs\MasterPage\font-awesome\.npmignore" />
+    <Content Include="Designs\MasterPage\font-awesome\bower.json" />
+    <Content Include="Designs\MasterPage\font-awesome\css\font-awesome.css.map" />
+    <Content Include="Designs\MasterPage\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Designs\MasterPage\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Designs\MasterPage\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Designs\MasterPage\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Designs\MasterPage\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Designs\MasterPage\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Designs\MasterPage\font-awesome\less\animated.less" />
+    <Content Include="Designs\MasterPage\font-awesome\less\bordered-pulled.less" />
+    <Content Include="Designs\MasterPage\font-awesome\less\core.less" />
+    <Content Include="Designs\MasterPage\font-awesome\less\fixed-width.less" />
+    <Content Include="Designs\MasterPage\font-awesome\less\font-awesome.less" />
+    <Content Include="Designs\MasterPage\font-awesome\less\icons.less" />
+    <Content Include="Designs\MasterPage\font-awesome\less\larger.less" />
+    <Content Include="Designs\MasterPage\font-awesome\less\list.less" />
+    <Content Include="Designs\MasterPage\font-awesome\less\mixins.less" />
+    <Content Include="Designs\MasterPage\font-awesome\less\path.less" />
+    <Content Include="Designs\MasterPage\font-awesome\less\rotated-flipped.less" />
+    <Content Include="Designs\MasterPage\font-awesome\less\screen-reader.less" />
+    <Content Include="Designs\MasterPage\font-awesome\less\stacked.less" />
+    <Content Include="Designs\MasterPage\font-awesome\less\variables.less" />
+    <Content Include="Designs\MasterPage\font-awesome\scss\_animated.scss" />
+    <Content Include="Designs\MasterPage\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="Designs\MasterPage\font-awesome\scss\_core.scss" />
+    <Content Include="Designs\MasterPage\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="Designs\MasterPage\font-awesome\scss\_icons.scss" />
+    <Content Include="Designs\MasterPage\font-awesome\scss\_larger.scss" />
+    <Content Include="Designs\MasterPage\font-awesome\scss\_list.scss" />
+    <Content Include="Designs\MasterPage\font-awesome\scss\_mixins.scss" />
+    <Content Include="Designs\MasterPage\font-awesome\scss\_path.scss" />
+    <Content Include="Designs\MasterPage\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="Designs\MasterPage\font-awesome\scss\_screen-reader.scss" />
+    <Content Include="Designs\MasterPage\font-awesome\scss\_stacked.scss" />
+    <Content Include="Designs\MasterPage\font-awesome\scss\_variables.scss" />
+    <Content Include="Designs\MasterPage\font-awesome\scss\font-awesome.scss" />
+    <Content Include="Forms\SiteMaster\HrgaOl.Master" />
+    <Content Include="bin\HRGA_OL.dll.config" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49167</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:49167/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
