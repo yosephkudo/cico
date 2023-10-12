@@ -29,5 +29,5 @@ Partial Public Class Frm_ManualBook
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents sh_pdf As Global.PdfViewer.ShowPdf
+    'Protected WithEvents sh_pdf As Global.PdfViewer.ShowPdf
 End Class

@@ -20,7 +20,7 @@
 <body>
     <form runat="server">
     <div class="container">
-            <h1>&nbsp;BBSO Online Login Page</h1>
+            <h1>&nbsp;BEKB Online Login Page</h1>
             <div class="contact">
 
                 <div class="right-hz">
@@ -43,7 +43,9 @@
                         <br />
                         <div class="phone">
                             <i class="fa fa-lock" aria-hidden="true"></i>
-                            &nbsp;<asp:DropDownList ID="ddlAkses" runat="server" CssClass="text"  BackColor="#666666" AutoPostBack="true"></asp:DropDownList>
+                            &nbsp;<asp:DropDownList ID="ddlAkses" runat="server" CssClass="text"  BackColor="#666666" AutoPostBack="true">
+                                <asp:ListItem></asp:ListItem>
+                            </asp:DropDownList>
                             <br />
                             <br />
                             <i class="fa fa-minus" aria-hidden="true"></i>
@@ -55,7 +57,7 @@
                 <div class="clear"></div>
             </div>
             <div class="footer-haz">
-                <p class="agileinfo">&copy; 2017 IS Div Distrik BBSO. All Rights Reserved | Dev by <a href="">MUF</a></p>
+                <p class="agileinfo">&copy; 2017 IS Div Distrik BEKB. All Rights Reserved | Dev by <a href="">MUF</a></p>
             </div>
 
         </div>

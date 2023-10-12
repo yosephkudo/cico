@@ -73,7 +73,7 @@
                     <!-- mini logo for sidebar mini 50x50 pixels -->
                     <span class="logo-mini"><b>TICKETING</b></span>
                     <!-- logo for regular state and mobile devices -->
-                    <span class="logo-lg"><b>TICKETING</b></span>
+                    CICO
                 </a>
                 <!-- Header Navbar: style can be found in header.less -->
                 <nav class="navbar navbar-static-top">
@@ -170,7 +170,7 @@
                 <div class="pull-right hidden-xs">
                     <b>Version</b> 1.0.7
                 </div>
-                <strong>Copyright &copy; 2017 <a href="">PAMA-BBSO Application Development Studio</a>.</strong> All rights
+                <strong>Copyright &copy; 2017 <a href="">PAMA-BEKB Application Development Studio</a>.</strong> All rights
     reserved.
             </footer>
             </div>

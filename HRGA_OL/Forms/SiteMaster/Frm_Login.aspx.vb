@@ -15,7 +15,7 @@ Public Class Frm_Login
             searcher.SearchScope = SearchScope.OneLevel
             Dim result As SearchResult = searcher.FindOne
             If result Is Nothing Then
-                lblKet.Text = "Username/Password salah. Silahkan coba kembali"
+                lblKet.Text = "Username/Password salah. Silahkan coba kembali lagi"
             Else
                 Dim dept As String = ""
                 Session("Nrpp") = txtUsernames.Text
@@ -28,7 +28,8 @@ Public Class Frm_Login
             End If
 
         Catch ex As Exception
-            lblKet.Text = "Username/Password salah. Silahkan coba kembali"
+            'lblKet.Text = "Error Login LDAP"
+            lblKet.Text = "Terjadi kesalahan: " & ex.Message
         End Try
     End Sub
     Public Sub getProfile(ByVal nrp As String, ByRef dept As String)
@@ -50,7 +51,6 @@ Public Class Frm_Login
         Next
 
     End Sub
-
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not IsPostBack Then
@@ -75,7 +75,7 @@ Public Class Frm_Login
         ElseIf Session("GPID") = "AGENT TICKETING LINTAS" Then
             Session("AGENT") = 2
         Else
-            GetAgent()
+            'GetAgent()
         End If
         Response.Redirect(Url + "/Forms/SiteMaster/Default.aspx")
     End Sub

@@ -10,7 +10,7 @@ Public Class Frm_Reservasi
         conn.ConnectionString = ConfigurationManager _
          .ConnectionStrings("DB_GSISConn").ConnectionString
         Dim cmd As SqlCommand = New SqlCommand
-        cmd.CommandText = "SELECT TOP 10 NRP +'-'+ Nama  as NRP FROM vw_Allkaryawan " _
+        cmd.CommandText = "SELECT TOP 10 NRP +'-'+ Nama  as NRP FROM vw_Allkaryawan2 " _
                         & " where NRP LIKE '%' + '" + prefixText + "' + '%' or Nama Like '%' + '" + prefixText + "' + '%' order by Nama"
         cmd.Connection = conn
         conn.Open()
@@ -261,7 +261,7 @@ Public Class Frm_Reservasi
                     End If
 
                 End If
-                gv_tiket.DataBind()
+                'gv_tiket.DataBind()
             End If
         Catch ex As Exception
 
@@ -290,7 +290,7 @@ Public Class Frm_Reservasi
         ddl_tujuan.SelectedValue = ""
         Session("NO_TR") = ""
         ddl_caridistrik.DataBind()
-        gv_tiket.DataBind()
+        'gv_tiket.DataBind()
         ' gv_listreq.DataBind()
     End Sub
 
@@ -328,7 +328,7 @@ Public Class Frm_Reservasi
                         btn_booking.Visible = True
                     End If
                 End If
-                gv_tiket.DataBind()
+                'gv_tiket.DataBind()
             End If
         Catch ex As Exception
         End Try

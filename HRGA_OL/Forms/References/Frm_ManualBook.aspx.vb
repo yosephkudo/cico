@@ -4,7 +4,7 @@
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Try
             If Get_Manual(Session("GPID")) <> "" Then
-                sh_pdf.FilePath = url & Get_Manual(Session("GPID"))
+                'sh_pdf.FilePath = url & Get_Manual(Session("GPID"))
             Else
                 ScriptManager.RegisterStartupScript(Me.Page, Me.GetType(), "alertMessage", "alert('Manual Book Tidak Tersedia');", True)
             End If

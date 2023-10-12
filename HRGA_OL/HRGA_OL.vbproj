@@ -41,9 +41,8 @@
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AjaxControlToolkit, Version=4.1.7.429, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\AjaxControlToolkit.dll</HintPath>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>..\packages\AjaxControlToolkit.20.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -393,6 +392,7 @@
     <Content Include="Forms\Transactions\Event\Frm_RequestEvent.aspx" />
     <Content Include="Forms\Transactions\Event\Frm_SMSHotline.aspx" />
     <Content Include="Forms\Transactions\Reservasi\Frm_Checkin.aspx" />
+    <Content Include="Forms\Transactions\Reservasi\Frm_Checkout_v1.aspx" />
     <Content Include="Forms\Transactions\Reservasi\Frm_Checkout.aspx" />
     <Content Include="Forms\Transactions\Reservasi\Frm_Housekeeping.aspx" />
     <Content Include="Forms\Transactions\Reservasi\Frm_ValidateReservasi.aspx" />
@@ -502,6 +502,13 @@
     </Compile>
     <Compile Include="Forms\Transactions\Reservasi\Frm_Checkin.aspx.vb">
       <DependentUpon>Frm_Checkin.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Transactions\Reservasi\Frm_Checkout_v1.aspx.designer.vb">
+      <DependentUpon>Frm_Checkout_v1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Transactions\Reservasi\Frm_Checkout_v1.aspx.vb">
+      <DependentUpon>Frm_Checkout_v1.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Forms\Transactions\Reservasi\Frm_Checkout.aspx.designer.vb">
@@ -827,6 +834,7 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+    <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
