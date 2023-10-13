@@ -26,9 +26,9 @@ Public Class Frm_Checkout
     Dim path As String = HttpContext.Current.Request.Url.AbsolutePath
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Try
-            CekAkses(Session("GPID"))
+            'CekAkses(Session("GPID"))
         Catch ex As Exception
-            Response.Redirect(url & "/Forms/SiteMaster/Frm_Login.aspx")
+            'Response.Redirect(url & "/Forms/SiteMaster/Frm_Login.aspx")
         End Try
     End Sub
     Public Sub CekAkses(ByVal s_str_gp As String)
@@ -50,7 +50,7 @@ Public Class Frm_Checkout
             dr = .ExecuteReader
             If dr.Read = False Then
                 ' ScriptManager.RegisterStartupScript(Me.Page, Me.GetType(), "alertMessage", "alert('" & path & "');", True)
-                Response.Redirect(url & "/Forms/SiteMaster/Frm_Login.aspx")
+                'Response.Redirect(url & "/Forms/SiteMaster/Frm_Login.aspx")
             End If
             con.Close()
         End With
