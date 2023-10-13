@@ -392,7 +392,6 @@
     <Content Include="Forms\Transactions\Event\Frm_RequestEvent.aspx" />
     <Content Include="Forms\Transactions\Event\Frm_SMSHotline.aspx" />
     <Content Include="Forms\Transactions\Reservasi\Frm_Checkin.aspx" />
-    <Content Include="Forms\Transactions\Reservasi\Frm_Checkout_v1.aspx" />
     <Content Include="Forms\Transactions\Reservasi\Frm_Checkout.aspx" />
     <Content Include="Forms\Transactions\Reservasi\Frm_Housekeeping.aspx" />
     <Content Include="Forms\Transactions\Reservasi\Frm_ValidateReservasi.aspx" />
@@ -502,13 +501,6 @@
     </Compile>
     <Compile Include="Forms\Transactions\Reservasi\Frm_Checkin.aspx.vb">
       <DependentUpon>Frm_Checkin.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
-    <Compile Include="Forms\Transactions\Reservasi\Frm_Checkout_v1.aspx.designer.vb">
-      <DependentUpon>Frm_Checkout_v1.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Transactions\Reservasi\Frm_Checkout_v1.aspx.vb">
-      <DependentUpon>Frm_Checkout_v1.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Forms\Transactions\Reservasi\Frm_Checkout.aspx.designer.vb">
