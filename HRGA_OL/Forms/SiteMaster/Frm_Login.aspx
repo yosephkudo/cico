@@ -10,7 +10,7 @@
     <meta name="description" content=""/>
     <meta name="author" content=""/>
 
-    <title>BBSO Online | Welcome ...</title>
+    <title>BEKB Online | Welcome ...</title>
 
     <link href="<%=ResolveUrl("~/Designs/Home/css/style.css") %>" rel="stylesheet" />
     <link href="/Designs/Home/css/style.css" rel="stylesheet" media="screen" runat="server" />

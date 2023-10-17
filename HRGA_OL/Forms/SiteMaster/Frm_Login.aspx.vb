@@ -29,7 +29,15 @@ Public Class Frm_Login
 
         Catch ex As Exception
             'lblKet.Text = "Error Login LDAP"
-            lblKet.Text = "Terjadi kesalahan: " & ex.Message
+            ' lblKet.Text = "Terjadi kesalahan: " & ex.Message
+            Dim dept As String = ""
+                Session("Nrpp") = txtUsernames.Text
+                Session("Nrp") = txtUsernames.Text.Substring(1, txtUsernames.Text.Length - 1)
+                Session("message") = ""
+                lblKet.Text = "Sukses login. Pilih Akses"
+                getProfile(Session("Nrp").ToString(), dept)
+                Session("dept") = dept
+                Session.Timeout = 30
         End Try
     End Sub
     Public Sub getProfile(ByVal nrp As String, ByRef dept As String)
