@@ -28,7 +28,7 @@ Public Class Frm_Checkout
         Try
             CekAkses(Session("GPID"))
         Catch ex As Exception
-            Response.Redirect(url & "/Forms/SiteMaster/Frm_Login.aspx")
+            ' Response.Redirect(url & "/Forms/SiteMaster/Frm_Login.aspx")
         End Try
     End Sub
     Public Sub CekAkses(ByVal s_str_gp As String)
@@ -50,7 +50,7 @@ Public Class Frm_Checkout
             dr = .ExecuteReader
             If dr.Read = False Then
                 ' ScriptManager.RegisterStartupScript(Me.Page, Me.GetType(), "alertMessage", "alert('" & path & "');", True)
-                Response.Redirect(url & "/Forms/SiteMaster/Frm_Login.aspx")
+                ' Response.Redirect(url & "/Forms/SiteMaster/Frm_Login.aspx")
             End If
             con.Close()
         End With
@@ -121,6 +121,7 @@ Public Class Frm_Checkout
         txt_jamcheckout.Text = ""
 
     End Sub
+
     Protected Sub gv_listpenghuni_SelectedIndexChanging(sender As Object, e As GridViewSelectEventArgs)
         Try
             Clear()
@@ -132,9 +133,7 @@ Public Class Frm_Checkout
                 gv_listpenghuni.DataBind()
             End If
         Catch ex As Exception
-
         End Try
-
     End Sub
 
     Private Sub txt_nrp_TextChanged(sender As Object, e As EventArgs) Handles txt_nrp.TextChanged

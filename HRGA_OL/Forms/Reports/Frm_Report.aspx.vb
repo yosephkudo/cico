@@ -15,7 +15,7 @@ Public Class Frm_Report
     End Sub
 
     Private Sub ddlReportList_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ddlReportList.SelectedIndexChanged
-        GetReport("http://bbsosqco401/reportserver_sqlexpress", ddlReportList.SelectedValue)
+        GetReport("http://bekbsqco403/reportserver_sqlexpress", ddlReportList.SelectedValue)
         rpt_viewer.Visible = True
     End Sub
 End Class

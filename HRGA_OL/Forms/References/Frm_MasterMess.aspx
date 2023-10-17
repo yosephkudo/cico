@@ -14,14 +14,14 @@
                             <label for="inputEmail3" class="col-sm-3 control-label" style="font-size: small; text-align: left">Komplek</label>
                             <div class="col-sm-8">
                                 <asp:DropDownList ID="ddl_komplek" runat="server" CssClass="form-control" DataSourceID="ds_group" DataTextField="KETERANGAN" DataValueField="PID_KOMPLEK_MESS" AutoPostBack ="true" ></asp:DropDownList>
-                                <asp:SqlDataSource runat="server" ID="ds_group" ConnectionString='<%$ ConnectionStrings:DB_GSISConn %>' SelectCommand="SELECT NULL AS KETERANGAN, NULL PID_KOMPLEK_MESS UNION SELECT DISTINCT KETERANGAN , PID_KOMPLEK_MESS FROM View_Mess"></asp:SqlDataSource>
+                                <asp:SqlDataSource runat="server" ID="ds_group" ConnectionString='<%$ ConnectionStrings:DB_GSISConn %>' SelectCommand="SELECT NULL AS KETERANGAN, NULL PID_KOMPLEK_MESS UNION SELECT DISTINCT KETERANGAN , PID_KOMPLEK_MESS FROM TBL_R_GROUP_MESS WHERE PID_KOMPLEK_MESS IN (1,2)"></asp:SqlDataSource>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-3 control-label" style="font-size: small; text-align: left">Gedung</label>
                             <div class="col-sm-8">
                                 <asp:DropDownList ID="ddl_gedung" runat="server" CssClass="form-control" DataSourceID="ds_gedung" DataTextField="NAMA_GEDUNG" DataValueField="PID_GEDUNG" AutoPostBack ="true" ></asp:DropDownList>
-                                <asp:SqlDataSource runat="server" ID="ds_gedung" ConnectionString='<%$ ConnectionStrings:DB_GSISConn %>' SelectCommand="SELECT DISTINCT NULL AS NAMA_GEDUNG, NULL AS PID_GEDUNG UNION SELECT NAMA_GEDUNG, PID_GEDUNG FROM View_Mess WHERE (PID_KOMPLEK_MESS = @KOMPLEK)">
+                                <asp:SqlDataSource runat="server" ID="ds_gedung" ConnectionString='<%$ ConnectionStrings:DB_GSISConn %>' SelectCommand="SELECT DISTINCT NULL AS NAMA_GEDUNG, NULL AS PID_GEDUNG UNION SELECT NAMA_GEDUNG, PID_GEDUNG FROM TBL_M_GEDUNG WHERE (PID_KOMPLEK_MESS = @KOMPLEK)">
                                     <SelectParameters>
                                         <asp:ControlParameter ControlID="ddl_komplek" PropertyName="SelectedValue" Name="KOMPLEK"></asp:ControlParameter>
                                     </SelectParameters>
