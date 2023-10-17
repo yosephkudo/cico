@@ -244,7 +244,7 @@
         <div class="col-sm-12">
                                         <div class="x_panel" runat ="server" > 
                                      <div style="overflow-x:auto">
-                                         <asp:GridView ID="gv_tiket" runat="server" CssClass="table table-striped jambo_table" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="False" DataSourceID="ds_tiket" AllowPaging="True" EmptyDataText="No Data Tiket" PagerStyle-CssClass="gridView">
+                                         <%-- <asp:GridView ID="gv_tiket" runat="server" CssClass="table table-striped jambo_table" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="False" DataSourceID="ds_tiket" AllowPaging="True" EmptyDataText="No Data Tiket" PagerStyle-CssClass="gridView">
                                              <AlternatingRowStyle BackColor="White" ForeColor="#284775"></AlternatingRowStyle>
 
                                              <Columns>
@@ -306,12 +306,12 @@
                                              <SortedDescendingCellStyle BackColor="#FFFDF8"></SortedDescendingCellStyle>
 
                                              <SortedDescendingHeaderStyle BackColor="#6F8DAE"></SortedDescendingHeaderStyle>
-                                         </asp:GridView>
-                                         <asp:SqlDataSource runat="server" ID="ds_tiket" ConnectionString='<%$ ConnectionStrings:DB_HRGAConn %>' SelectCommand="SELECT NRP, KodeBooking, NomorST, Nama, ForTiket, Dari, Tujuan, CONVERT (varchar(10), Tanggal, 105) + ' ' + JamBerangkat AS Tanggal, Maskapai FROM VW_ETicket WHERE (KodeBooking IN (SELECT DISTINCT KodeBooking FROM VW_ETicket AS VW_ETicket_1 WHERE (Tanggal >= CAST(GETDATE() AS DATE)) AND (NRP = @NRP))) AND (Tanggal >= CAST(GETDATE() AS DATE)) ORDER BY Tanggal">
+                                         </asp:GridView> --%>
+                                         <%-- <asp:SqlDataSource runat="server" ID="ds_tiket" ConnectionString='<%$ ConnectionStrings:DB_HRGAConn %>' SelectCommand="SELECT NRP, KodeBooking, NomorST, Nama, ForTiket, Dari, Tujuan, CONVERT (varchar(10), Tanggal, 105) + ' ' + JamBerangkat AS Tanggal, Maskapai FROM VW_ETicket WHERE (KodeBooking IN (SELECT DISTINCT KodeBooking FROM VW_ETicket AS VW_ETicket_1 WHERE (Tanggal >= CAST(GETDATE() AS DATE)) AND (NRP = @NRP))) AND (Tanggal >= CAST(GETDATE() AS DATE)) ORDER BY Tanggal">
                                              <SelectParameters>
                                                  <asp:ControlParameter ControlID="txt_nrp" PropertyName="Text" Name="NRP"></asp:ControlParameter>
                                              </SelectParameters>
-                                         </asp:SqlDataSource>
+                                         </asp:SqlDataSource> --%>
                                      </div> 
                                     </div>
         </div> 

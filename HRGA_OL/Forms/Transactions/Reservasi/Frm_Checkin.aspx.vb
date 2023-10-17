@@ -4,14 +4,14 @@ Public Class Frm_Reservasi
     Inherits System.Web.UI.Page
 
     <System.Web.Script.Services.ScriptMethod(), _
-  System.Web.Services.WebMethod()> _
+System.Web.Services.WebMethod()> _
     Public Shared Function SearchNRP(ByVal prefixText As String, ByVal count As Integer) As List(Of String)
         Dim conn As SqlConnection = New SqlConnection
         conn.ConnectionString = ConfigurationManager _
          .ConnectionStrings("DB_GSISConn").ConnectionString
         Dim cmd As SqlCommand = New SqlCommand
-        cmd.CommandText = "SELECT TOP 10 NRP +'-'+ Nama  as NRP FROM vw_Allkaryawan2 " _
-                        & " where NRP LIKE '%' + '" + prefixText + "' + '%' or Nama Like '%' + '" + prefixText + "' + '%' order by Nama"
+        cmd.CommandText = "SELECT TOP 10 NRP +'-'+ NAMA  as NRP FROM VW_ALL_KARYAWAN " _
+                        & " where NRP LIKE '%' + '" + prefixText + "' + '%' or NAMA Like '%' + '" + prefixText + "' + '%' order by NAMA"
         cmd.Connection = conn
         conn.Open()
         Dim customers As List(Of String) = New List(Of String)
@@ -28,7 +28,7 @@ Public Class Frm_Reservasi
         Try
             CekAkses(Session("GPID"))
         Catch ex As Exception
-            'Response.Redirect(url & "/Forms/SiteMaster/Frm_Login.aspx")
+            Response.Redirect(url & "/Forms/SiteMaster/Frm_Login.aspx")
         End Try
     End Sub
 
@@ -55,8 +55,8 @@ Public Class Frm_Reservasi
             End If
             con.Close()
         End With
-
     End Sub
+
     Public Sub Getdata_Reservasi(ByVal s_str_nrp As String, ByRef s_str_nama As String, ByRef s_str_telepon As String, ByRef s_str_company As String, ByRef s_str_distrik As String, ByRef s_str_jabatan As String, ByRef s_str_keluarga As String, ByRef s_str_keperluan As String, ByRef s_str_checkin As String, ByRef s_str_checkout As String, ByRef s_str_lokasi As String, ByRef s_str_gedung As String, ByRef s_str_kamar As String, ByRef s_str_dari As String, ByRef s_str_tujuan As String, ByRef s_str_notr As String)
         Dim con As SqlClient.SqlConnection = Nothing
         Dim cmd As SqlClient.SqlCommand = Nothing
@@ -228,7 +228,6 @@ Public Class Frm_Reservasi
     End Sub
 
     Private Sub txt_nrp_TextChanged(sender As Object, e As EventArgs) Handles txt_nrp.TextChanged
-
 
         Try
 
