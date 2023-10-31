@@ -44,13 +44,18 @@
     <Reference Include="AjaxControlToolkit">
       <HintPath>..\packages\AjaxControlToolkit.20.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ReportViewer.Common, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\QUERY &amp; SCRIPTS\Microsoft.ReportViewer.Common.dll</HintPath>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.Common.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ReportViewer.WebForms, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+    <Reference Include="Microsoft.ReportViewer.DataVisualization">
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\QUERY &amp; SCRIPTS\Microsoft.ReportViewer.WebForms.DLL</HintPath>
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.WebForms.DLL</HintPath>
     </Reference>
     <Reference Include="PdfViewer, Version=1.0.2576.1086, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -183,6 +188,8 @@
     <Content Include="Designs\Images\arrow.png" />
     <Content Include="Designs\Images\book.png" />
     <Content Include="Designs\Images\centang.png" />
+    <Content Include="Designs\Images\logo.png" />
+    <Content Include="Designs\Images\background.jpg" />
     <Content Include="Designs\Images\clean.png" />
     <Content Include="Designs\Images\cross.png" />
     <Content Include="Designs\Images\delete.png" />
@@ -384,6 +391,7 @@
     <Content Include="Forms\References\Frm_MasterMess.aspx" />
     <Content Include="Forms\References\Frm_MasterTicketing.aspx" />
     <Content Include="Forms\Reports\Frm_DashReport.aspx" />
+    <Content Include="Forms\Reports\Frm_ReportHistoryCheckin.aspx" />
     <Content Include="Forms\Reports\Frm_Report.aspx" />
     <Content Include="Forms\SiteMaster\Default.aspx" />
     <Content Include="Forms\SiteMaster\Frm_Login.aspx" />
@@ -440,6 +448,13 @@
       <DependentUpon>Frm_DashReport.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="Forms\Reports\Frm_ReportHistoryCheckin.aspx.designer.vb">
+      <DependentUpon>Frm_ReportHistoryCheckin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Reports\Frm_ReportHistoryCheckin.aspx.vb">
+      <DependentUpon>Frm_ReportHistoryCheckin.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Forms\Reports\Frm_Report.aspx.designer.vb">
       <DependentUpon>Frm_Report.aspx</DependentUpon>
     </Compile>
@@ -459,7 +474,7 @@
     </Compile>
     <Compile Include="Forms\SiteMaster\Frm_Login.aspx.vb">
       <DependentUpon>Frm_Login.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Forms\SiteMaster\HrgaOl.Master.designer.vb">
       <DependentUpon>HrgaOl.Master</DependentUpon>
@@ -501,7 +516,7 @@
     </Compile>
     <Compile Include="Forms\Transactions\Reservasi\Frm_Checkin.aspx.vb">
       <DependentUpon>Frm_Checkin.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Forms\Transactions\Reservasi\Frm_Checkout.aspx.designer.vb">
       <DependentUpon>Frm_Checkout.aspx</DependentUpon>
