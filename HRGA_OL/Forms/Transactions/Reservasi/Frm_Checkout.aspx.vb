@@ -3,14 +3,14 @@
 Public Class Frm_Checkout
     Inherits System.Web.UI.Page
     <System.Web.Script.Services.ScriptMethod(), _
- System.Web.Services.WebMethod()> _
+System.Web.Services.WebMethod()> _
     Public Shared Function SearchNRP(ByVal prefixText As String, ByVal count As Integer) As List(Of String)
         Dim conn As SqlClient.SqlConnection = New SqlConnection
         conn.ConnectionString = ConfigurationManager _
          .ConnectionStrings("DB_GSISConn").ConnectionString
         Dim cmd As SqlCommand = New SqlCommand
-        cmd.CommandText = "SELECT DISTINCT TOP 10 NRP +'-'+ Nama  as NRP FROM VW_KARYAWAN_CHECKIN " _
-                        & " where NRP LIKE '%' + '" + prefixText + "' + '%' or Nama Like '%' + '" + prefixText + "' + '%' order by Nama"
+        cmd.CommandText = "SELECT DISTINCT TOP 10 NRP +'-'+ NAMA as NRP, NAMA FROM VW_KARYAWAN_CHECKIN " _
+                     & " where NRP LIKE '%' + '" + prefixText + "' + '%' or NAMA Like '%' + '" + prefixText + "' + '%' order by NAMA"
         cmd.Connection = conn
         conn.Open()
         Dim customers As List(Of String) = New List(Of String)
@@ -28,7 +28,7 @@ Public Class Frm_Checkout
         Try
             CekAkses(Session("GPID"))
         Catch ex As Exception
-            ' Response.Redirect(url & "/Forms/SiteMaster/Frm_Login.aspx")
+            Response.Redirect(url & "/Forms/SiteMaster/Frm_Login.aspx")
         End Try
     End Sub
     Public Sub CekAkses(ByVal s_str_gp As String)
@@ -145,7 +145,7 @@ Public Class Frm_Checkout
 
                 Getdata_Reservasi(txt_nrp.Text, txt_nama.Text, txt_nohp.Text, txt_keluarga.Text, txt_keperluan.Text, txt_lokasi.Text, txt_gedung.Text, txt_kamar.Text, txt_tujuan.Text, txt_tglcheckin.Text, txt_jamcheckin.Text, txt_tglcheckout.Text)
                 txt_jamcheckout.Text = Format(Now(), "HH:mm")
-                gv_listpenghuni.DataBind()
+                ' gv_listpenghuni.DataBind()
             End If
         Catch ex As Exception
 
