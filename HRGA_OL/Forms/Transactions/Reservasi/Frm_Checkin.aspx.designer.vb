@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class Frm_Reservasi
-    
+
     '''<summary>
     '''ScriptManager1 control.
     '''</summary>
@@ -21,7 +21,7 @@ Partial Public Class Frm_Reservasi
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ScriptManager1 As Global.System.Web.UI.ScriptManager
-    
+
     '''<summary>
     '''txt_nrp control.
     '''</summary>
@@ -30,7 +30,7 @@ Partial Public Class Frm_Reservasi
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txt_nrp As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''txt_nrp_AutoCompleteExtender control.
     '''</summary>
@@ -39,7 +39,7 @@ Partial Public Class Frm_Reservasi
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txt_nrp_AutoCompleteExtender As Global.AjaxControlToolkit.AutoCompleteExtender
-    
+
     '''<summary>
     '''txt_nama control.
     '''</summary>
@@ -48,7 +48,7 @@ Partial Public Class Frm_Reservasi
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txt_nama As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''txt_nohp control.
     '''</summary>
@@ -57,7 +57,7 @@ Partial Public Class Frm_Reservasi
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txt_nohp As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''ddl_company control.
     '''</summary>
@@ -66,7 +66,7 @@ Partial Public Class Frm_Reservasi
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ddl_company As Global.System.Web.UI.WebControls.DropDownList
-    
+
     '''<summary>
     '''ds_company control.
     '''</summary>
@@ -75,7 +75,7 @@ Partial Public Class Frm_Reservasi
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ds_company As Global.System.Web.UI.WebControls.SqlDataSource
-    
+
     '''<summary>
     '''ddl_distrik control.
     '''</summary>
@@ -84,7 +84,7 @@ Partial Public Class Frm_Reservasi
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ddl_distrik As Global.System.Web.UI.WebControls.DropDownList
-    
+
     '''<summary>
     '''ds_distrik control.
     '''</summary>
@@ -93,7 +93,7 @@ Partial Public Class Frm_Reservasi
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ds_distrik As Global.System.Web.UI.WebControls.SqlDataSource
-    
+
     '''<summary>
     '''txt_jabatan control.
     '''</summary>
@@ -102,7 +102,7 @@ Partial Public Class Frm_Reservasi
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txt_jabatan As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''ddl_keluarga control.
     '''</summary>
@@ -111,7 +111,7 @@ Partial Public Class Frm_Reservasi
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ddl_keluarga As Global.System.Web.UI.WebControls.DropDownList
-    
+
     '''<summary>
     '''ddl_keperluan control.
     '''</summary>
@@ -120,7 +120,7 @@ Partial Public Class Frm_Reservasi
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ddl_keperluan As Global.System.Web.UI.WebControls.DropDownList
-    
+
     '''<summary>
     '''ds_keperluan control.
     '''</summary>
@@ -129,7 +129,7 @@ Partial Public Class Frm_Reservasi
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ds_keperluan As Global.System.Web.UI.WebControls.SqlDataSource
-    
+
     '''<summary>
     '''txt_tglcheckin control.
     '''</summary>
@@ -138,7 +138,7 @@ Partial Public Class Frm_Reservasi
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txt_tglcheckin As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''txt_checkin_CalendarExtender control.
     '''</summary>
@@ -147,7 +147,7 @@ Partial Public Class Frm_Reservasi
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txt_checkin_CalendarExtender As Global.AjaxControlToolkit.CalendarExtender
-    
+
     '''<summary>
     '''txt_jamcheckin control.
     '''</summary>
@@ -156,7 +156,7 @@ Partial Public Class Frm_Reservasi
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txt_jamcheckin As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''txt_jamcheckin_MaskedEditExtender control.
     '''</summary>
@@ -165,7 +165,7 @@ Partial Public Class Frm_Reservasi
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txt_jamcheckin_MaskedEditExtender As Global.AjaxControlToolkit.MaskedEditExtender
-    
+
     '''<summary>
     '''txt_checkout control.
     '''</summary>
@@ -174,7 +174,7 @@ Partial Public Class Frm_Reservasi
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txt_checkout As Global.System.Web.UI.WebControls.TextBox
-    
+
     '''<summary>
     '''txt_checkout_CalendarExtender control.
     '''</summary>
@@ -183,7 +183,7 @@ Partial Public Class Frm_Reservasi
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txt_checkout_CalendarExtender As Global.AjaxControlToolkit.CalendarExtender
-    
+
     '''<summary>
     '''ddl_lokasi control.
     '''</summary>
@@ -192,7 +192,7 @@ Partial Public Class Frm_Reservasi
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ddl_lokasi As Global.System.Web.UI.WebControls.DropDownList
-    
+
     '''<summary>
     '''ds_lokasi control.
     '''</summary>
@@ -201,7 +201,7 @@ Partial Public Class Frm_Reservasi
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ds_lokasi As Global.System.Web.UI.WebControls.SqlDataSource
-    
+
     '''<summary>
     '''ddl_gedung control.
     '''</summary>
@@ -210,7 +210,7 @@ Partial Public Class Frm_Reservasi
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ddl_gedung As Global.System.Web.UI.WebControls.DropDownList
-    
+
     '''<summary>
     '''ds_gedung control.
     '''</summary>
@@ -219,7 +219,7 @@ Partial Public Class Frm_Reservasi
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ds_gedung As Global.System.Web.UI.WebControls.SqlDataSource
-    
+
     '''<summary>
     '''ddl_kamar control.
     '''</summary>
@@ -228,7 +228,7 @@ Partial Public Class Frm_Reservasi
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ddl_kamar As Global.System.Web.UI.WebControls.DropDownList
-    
+
     '''<summary>
     '''ds_kamar control.
     '''</summary>
@@ -237,70 +237,7 @@ Partial Public Class Frm_Reservasi
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ds_kamar As Global.System.Web.UI.WebControls.SqlDataSource
-    
-    '''<summary>
-    '''ddl_kedatangan control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents ddl_kedatangan As Global.System.Web.UI.WebControls.DropDownList
-    
-    '''<summary>
-    '''ddl_tujuan control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents ddl_tujuan As Global.System.Web.UI.WebControls.DropDownList
-    
-    '''<summary>
-    '''ddl_caridistrik control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents ddl_caridistrik As Global.System.Web.UI.WebControls.DropDownList
-    
-    '''<summary>
-    '''ds_sitereq control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents ds_sitereq As Global.System.Web.UI.WebControls.SqlDataSource
-    
-    '''<summary>
-    '''txt_cari control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents txt_cari As Global.System.Web.UI.WebControls.TextBox
-    
-    '''<summary>
-    '''gv_listreq control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents gv_listreq As Global.System.Web.UI.WebControls.GridView
-    
-    '''<summary>
-    '''ds_listreq control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents ds_listreq As Global.System.Web.UI.WebControls.SqlDataSource
-    
+
     '''<summary>
     '''btn_clear control.
     '''</summary>
@@ -309,16 +246,7 @@ Partial Public Class Frm_Reservasi
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_clear As Global.System.Web.UI.WebControls.Button
-    
-    '''<summary>
-    '''btn_booking control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents btn_booking As Global.System.Web.UI.WebControls.Button
-    
+
     '''<summary>
     '''btn_checkin control.
     '''</summary>
@@ -327,31 +255,4 @@ Partial Public Class Frm_Reservasi
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btn_checkin As Global.System.Web.UI.WebControls.Button
-    
-    '''<summary>
-    '''btn_update control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents btn_update As Global.System.Web.UI.WebControls.Button
-    
-    '''<summary>
-    '''gv_tiket control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents gv_tiket As Global.System.Web.UI.WebControls.GridView
-    
-    '''<summary>
-    '''ds_tiket control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents ds_tiket As Global.System.Web.UI.WebControls.SqlDataSource
 End Class
