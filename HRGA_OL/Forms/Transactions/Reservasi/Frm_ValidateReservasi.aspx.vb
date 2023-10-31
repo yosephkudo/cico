@@ -6,7 +6,7 @@
         Try
             CekAkses(Session("GPID"))
         Catch ex As Exception
-            Response.Redirect(url & "/Forms/SiteMaster/Frm_Login.aspx")
+            ' Response.Redirect(url & "/Forms/SiteMaster/Frm_Login.aspx")
         End Try
     End Sub
     Public Sub CekAkses(ByVal s_str_gp As String)
@@ -28,7 +28,7 @@
             dr = .ExecuteReader
             If dr.Read = False Then
                 ' ScriptManager.RegisterStartupScript(Me.Page, Me.GetType(), "alertMessage", "alert('" & path & "');", True)
-                Response.Redirect(url & "/Forms/SiteMaster/Frm_Login.aspx")
+                ' Response.Redirect(url & "/Forms/SiteMaster/Frm_Login.aspx")
             End If
             con.Close()
         End With

@@ -1,7 +1,14 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Forms/SiteMaster/HrgaOl.Master" CodeBehind="Default.aspx.vb" Inherits="HRGA_OL._Default"  %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-   <div runat ="server" id ="row_gs" class="row" visible ="false" >
+  <iframe
+      src="http://bekbsqrp401:3000/public/dashboard/64d1a9d9-92cf-4866-a462-06ec9daf8ea9"
+      frameborder="0"
+      width="1000"
+      height="600"
+      allowtransparency
+  ></iframe>
+   <%-- <div runat ="server" id ="row_gs" class="row" visible ="false" >
         <div class="col-lg-3 col-xs-6">
           <!-- small box -->
           <div class="small-box bg-aqua">
@@ -55,7 +62,7 @@
             <div class="icon">
               <i class="ion ion-pie-graph"></i>
             </div>
-            <a href="http://pama-bbso/Ticketing/Forms/Transactions/Ticketing/Frm_AssignTA.aspx" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="http://pama-bekb/cico/Forms/Transactions/Ticketing/Frm_AssignTA.aspx" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
        </div>
@@ -114,7 +121,7 @@
             <div class="icon">
               <i class="ion ion-pie-graph"></i>
             </div>
-            <a href="http://pama-bbso/Ticketing/Forms/Transactions/Event/Frm_RequestEvent.aspx" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="http://pama-bekb/cico/Forms/Transactions/Event/Frm_RequestEvent.aspx" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
        </div>
@@ -176,8 +183,9 @@
             <a href="#" runat ="server" id="lk_issued" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
-       </div>
+       </div> --%>
    
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+    
 </asp:Content>
