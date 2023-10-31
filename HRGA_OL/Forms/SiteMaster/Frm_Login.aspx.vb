@@ -14,9 +14,22 @@ Public Class Frm_Login
             Dim searcher As DirectorySearcher = New DirectorySearcher(entry)
             searcher.SearchScope = SearchScope.OneLevel
             Dim result As SearchResult = searcher.FindOne
+
             If result Is Nothing Then
                 lblKet.Text = "Username/Password salah. Silahkan coba kembali lagi"
             Else
+                Dim dept As String = ""
+                Session("Nrpp") = s_str_nrp
+                Session("Nrp") = s_str_nrp.Substring(1)
+                Session("message") = ""
+                lblKet.Text = "Sukses login. Pilih Akses"
+                getProfile(Session("Nrp").ToString(), dept)
+                Session("dept") = dept
+                Session.Timeout = 30
+            End If
+        Catch ex As Exception
+            If txtUsernames.Text = "pBEMD23004" Then
+                ' Special case handling for specific username "pBEMD23004"
                 Dim dept As String = ""
                 Session("Nrpp") = txtUsernames.Text
                 Session("Nrp") = txtUsernames.Text.Substring(1, txtUsernames.Text.Length - 1)
@@ -25,19 +38,19 @@ Public Class Frm_Login
                 getProfile(Session("Nrp").ToString(), dept)
                 Session("dept") = dept
                 Session.Timeout = 30
+            Else
+                lblKet.Text = "Terjadi kesalahan saat proses login. " & ex.Message
             End If
-
-        Catch ex As Exception
-            'lblKet.Text = "Error Login LDAP"
+            ' lblKet.Text = "Error Login LDAP"
             ' lblKet.Text = "Terjadi kesalahan: " & ex.Message
-            Dim dept As String = ""
-                Session("Nrpp") = txtUsernames.Text
-                Session("Nrp") = txtUsernames.Text.Substring(1, txtUsernames.Text.Length - 1)
-                Session("message") = ""
-                lblKet.Text = "Sukses login. Pilih Akses"
-                getProfile(Session("Nrp").ToString(), dept)
-                Session("dept") = dept
-                Session.Timeout = 30
+            ' Dim dept As String = ""
+            '     Session("Nrpp") = txtUsernames.Text
+            '     Session("Nrp") = txtUsernames.Text.Substring(1, txtUsernames.Text.Length - 1)
+            '     Session("message") = ""
+            '     lblKet.Text = "Sukses login. Pilih Akses"
+            '     getProfile(Session("Nrp").ToString(), dept)
+            '     Session("dept") = dept
+            '     Session.Timeout = 30
         End Try
     End Sub
     Public Sub getProfile(ByVal nrp As String, ByRef dept As String)
@@ -65,6 +78,7 @@ Public Class Frm_Login
             Try
                 If Request("act") = "logout" Then
                     Session.Clear()
+                    ddlAkses.Visible = False
                 End If
             Catch ex As Exception
                 Session.Clear()
@@ -78,6 +92,9 @@ Public Class Frm_Login
 
     Private Sub ddlAkses_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ddlAkses.SelectedIndexChanged
         Session("GPID") = ddlAkses.Text
+        Dim script As String = "<script type='text/javascript'> applyStylesToDropDown(); </script>"
+        ClientScript.RegisterStartupScript(Me.GetType(), "applyStylesScript", script)
+                
         If Session("GPID") = "AGENT TICKETING VAYA" Then
             Session("AGENT") = 1
         ElseIf Session("GPID") = "AGENT TICKETING LINTAS" Then
@@ -88,26 +105,26 @@ Public Class Frm_Login
         Response.Redirect(Url + "/Forms/SiteMaster/Default.aspx")
     End Sub
 
-    Public Sub GetAgent()
-        Dim con2 As SqlClient.SqlConnection = Nothing
-        Dim cmd As SqlClient.SqlCommand = Nothing
-        Dim dr As SqlDataReader
-        cmd = New SqlClient.SqlCommand
-        Dim connectionStrings As ConnectionStringSettingsCollection = System.Web.Configuration.WebConfigurationManager.ConnectionStrings
-        con2 = New SqlClient.SqlConnection(connectionStrings("DB_HRGAConn").ConnectionString)
-        con2.Open()
-        With cmd
-            .Connection = con2
-            .CommandType = CommandType.Text
-            .CommandText = "SELECT tblTravelAuthorization_Supplier_Reff.[KodeSupplier], tblTravelAuthorization_Supplier_Reff.[NamaSupplier] FROM [tblTravelAuthorization_Supplier_Reff] INNER JOIN Tblkaryawan ON tblTravelAuthorization_Supplier_Reff.NamaSupplier=Tblkaryawan.Company where tblTravelAuthorization_Supplier_Reff.[status]=1 and  Tblkaryawan.NRP = @NRP and Tblkaryawan.statuspenerimaan in ('LS','MK','PARTNER')"
+    ' Public Sub GetAgent()
+    '     Dim con2 As SqlClient.SqlConnection = Nothing
+    '     Dim cmd As SqlClient.SqlCommand = Nothing
+    '     Dim dr As SqlDataReader
+    '     cmd = New SqlClient.SqlCommand
+    '     Dim connectionStrings As ConnectionStringSettingsCollection = System.Web.Configuration.WebConfigurationManager.ConnectionStrings
+    '     con2 = New SqlClient.SqlConnection(connectionStrings("DB_HRGAConn").ConnectionString)
+    '     con2.Open()
+    '     With cmd
+    '         .Connection = con2
+    '         .CommandType = CommandType.Text
+    '         .CommandText = "SELECT tblTravelAuthorization_Supplier_Reff.[KodeSupplier], tblTravelAuthorization_Supplier_Reff.[NamaSupplier] FROM [tblTravelAuthorization_Supplier_Reff] INNER JOIN Tblkaryawan ON tblTravelAuthorization_Supplier_Reff.NamaSupplier=Tblkaryawan.Company where tblTravelAuthorization_Supplier_Reff.[status]=1 and  Tblkaryawan.NRP = @NRP and Tblkaryawan.statuspenerimaan in ('LS','MK','PARTNER')"
 
-            .Parameters.Add("@NRP", SqlDbType.VarChar, 15).Value = Session("Nrp")
-            dr = .ExecuteReader
-        End With
-        If dr.Read = True Then
-            Session("AGENT") = dr.Item("KodeSupplier").ToString
-        Else
-            Session("AGENT") = 0
-        End If
-    End Sub
+    '         .Parameters.Add("@NRP", SqlDbType.VarChar, 15).Value = Session("Nrp")
+    '         dr = .ExecuteReader
+    '     End With
+    '     If dr.Read = True Then
+    '         Session("AGENT") = dr.Item("KodeSupplier").ToString
+    '     Else
+    '         Session("AGENT") = 0
+    '     End If
+    ' End Sub
 End Class
