@@ -132,7 +132,7 @@ Public Class Frm_ETicket
                 rpt_viewer.Visible = True
                 rpt_viewer.ProcessingMode = ProcessingMode.Remote
                 Dim serverReport As ServerReport = rpt_viewer.ServerReport
-                serverReport.ReportServerUrl = New Uri("http://bekbsqco403/reportserver_sqlexpress")
+                serverReport.ReportServerUrl = New Uri("http://bekbsqco401/reportserver_sqlexpress")
                 serverReport.ReportPath = "/Tiket/tiket_pesawat"
                 rpt_viewer.ShowParameterPrompts = False
                 Dim Kode As New ReportParameter("KodeBooking", ddl_kode.SelectedValue)

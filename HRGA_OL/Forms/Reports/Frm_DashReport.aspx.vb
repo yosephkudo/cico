@@ -14,7 +14,7 @@ Public Class Frm_DashReport
     Public Sub GetReport(ByVal s_str_reportPath As String)
         rpt_viewer.ProcessingMode = ProcessingMode.Remote
         Dim serverReport As ServerReport = rpt_viewer.ServerReport
-        serverReport.ReportServerUrl = New Uri("http://bekbsqco403/reportserver_sqlexpress")
+        serverReport.ReportServerUrl = New Uri("http://bekbsqco401/reportserver_sqlexpress")
         serverReport.ReportPath = s_str_reportPath
     End Sub
 End Class
